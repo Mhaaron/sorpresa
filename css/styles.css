@@ -1,0 +1,210 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(#ff00f2,#9795e6);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nota {
+    font-size: 0;
+}
+
+.banda h1 {
+    margin-top: -80px;
+}
+
+.banda img {
+    width: 1000px;
+    height: 120px;
+}
+
+.container__tarjetas {
+    display: flex;
+    justify-content: center;
+}
+
+.tarjeta {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 320px;
+    height: 380px;
+}
+
+.morsi img{
+    height: 180px;
+    width: 280px;
+}
+
+.bruji {
+    color: purple;
+    /* background-color: black */;
+}
+
+/* .arañita {
+
+    background-color: #B5D8C7; 
+} */
+
+.arañita img {
+    margin-top: 100px;
+    height: 160px;
+    width: 150px;
+}
+
+/* .unicornio {
+    background: linear-gradient(#FC0067,rgb(178, 144, 255));
+} */
+
+h1 {
+    text-align: center;
+}
+
+.personajes {
+    width: 300px;
+    height: 240px;
+}
+
+.container__regalos {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    margin-top: -50px;
+    background-color: #46230D; 
+}
+
+.regalos {
+    margin-top: 50px;
+    width: 280px;
+    height: 200px; 
+}
+
+.pastel {
+    width: 300px;
+    height: 240px;
+}
+
+.animated {
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-100px);}
+    60% {transform: translateY(-100px);}
+}
+.bounce {
+    animation-name: bounce;
+}
+
+@keyframes wobble {
+    25% {transform: translateX(-2%) rotate(-3deg);}
+    50% {transform: translateX(2%) rotate(3deg);}
+    75% {transform: translateX(-2%) rotate(-3deg);}
+    100% {transform: translateX(0) rotate(0);}
+}
+.wobble {
+    animation-name: wobble;
+}
+
+.globos {
+    width: 100px;
+    height: 200px;
+}
+
+.globos__container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -380px;
+}
+
+.animated_glob {
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce_glob {
+    50% {transform: translateY(-100px);}
+    100% {transform: translateY(0px);}
+}
+.bounce_glob {
+    animation-name: bounce_glob;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin-top: 50px;
+    }
+    .nota {
+        width: 200px;
+        height: 600px;
+        text-align: center;
+        font-size: 15px;
+    }
+    .banda {
+        margin-top: 10px;
+    }
+    .banda h1 {
+        margin-top: -40px;
+    }
+    .banda img {
+        width: 500px;
+        height: 60px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 10px;
+    }
+    .container__tarjetas {
+        margin-top: 60px;
+    }
+    .tarjeta {
+        width: 100px;
+        height: 200px;
+    }
+    .personajes {
+        width: 110px;
+        height: 90px;
+    }
+    .morsi img {
+        margin-top: 10px;
+        height: 75px;
+        width: 95px;
+    }
+    .arañita img {
+        margin-top: 50px;
+        height: 50px;
+        width: 50px;
+    }
+    .container__regalos {
+        height: auto;
+    }
+    .regalos {
+        margin-top: 50px;
+        width: 100px;
+        height: 55px; 
+    }
+    .pastel {
+        width: 150px;
+        height: 110px;
+    }
+    .globos {
+        width: 50px;
+        height: 100px;
+    }
+    .globos__container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: -210px;
+    }
+}
