@@ -5,44 +5,36 @@ var mediaqueryList = window.matchMedia("(max-width: 600px)");
 function sorpresa() {
     let text = happy.textContent;
     let letras = [];
-    let margen = -500;
-    let pixels = 0;
     let iteraciones = 50;
     let contador = 0;
     let time = 0;
     let fontSize = 35;
-    let marginTop = 65.5;
-    let incremento = 65;
-
+    
     if (mediaqueryList.matches) {
-        fontSize = 20;
-        marginTop = 37.5;
-        margen = -300;
-        incremento = 40;
+        fontSize = 18;
     }
     
     happy.textContent = '';
 
     for (let i = 0; i < text.length; i++) {
-        let h1 = document.createElement('h1');
-        h1.textContent = text.substr(i, 1);
+        let sp = document.createElement('span');
 
-        h1.style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px;`;
+        sp.textContent = text.substr(i, 1);
 
-        pixels += incremento;
+        sp.style.cssText = `font-size: ${fontSize}px;`;
 
-        letras.push(h1);
-        happy.append(h1);
+        letras.push(sp);
+        happy.append(sp);
     }
 
     while (contador < iteraciones) {
         if (contador == 0) {
-            iterarColor(letras, margen, pixels, fontSize, marginTop, incremento);
-            reiniciarColor(letras, margen, pixels, fontSize, marginTop, incremento);
+            iterarColor(letras, fontSize);
+            reiniciarColor(letras, fontSize);
         } else {
             setTimeout(() => {
-                iterarColor(letras, margen, pixels, fontSize, marginTop, incremento);
-                reiniciarColor(letras, margen, pixels, fontSize, marginTop, incremento);
+                iterarColor(letras, fontSize);
+                reiniciarColor(letras, fontSize);
             }, time);
         }
 
@@ -52,45 +44,63 @@ function sorpresa() {
 
 }
 
-function iterarColor(letras, margen, pixels, fontSize, marginTop, incremento) {
+function iterarColor(letras, fontSize) {
     let time = 550;
 
     for (let i in letras) {
         setTimeout(() => {
-            if (i == 0) {
-                pixels = 0;
-                letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: pink;`;
-            }
-            if (i == 1) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: blue;`;
-            if (i == 2) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: yellow;`;
-            if (i == 3) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: green;`;
-            if (i == 4) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: orange;`;
-            if (i == 5) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: pink;`;
-            if (i == 6) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: blue;`;
-            if (i == 7) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: yellow;`;
-            if (i == 8) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: green;`;
-            if (i == 9) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: orange;`;
-            if (i == 10) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: pink;`;
-            if (i == 11) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: blue;`;
-            if (i == 12) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: yellow;`;
-            if (i == 13) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: green;`;
-            if (i == 14) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: orange;`;
-            if (i == 15) letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: pink;`;
-            pixels += incremento;
+            if (i == 0) letras[i].style.cssText = `font-size: ${fontSize}px; color: pink;`;
+            if (i == 1) letras[i].style.cssText = `font-size: ${fontSize}px; color: blue;`;
+            if (i == 2) letras[i].style.cssText = `font-size: ${fontSize}px; color: yellow;`;
+            if (i == 3) letras[i].style.cssText = `font-size: ${fontSize}px; color: green;`;
+            if (i == 4) letras[i].style.cssText = `font-size: ${fontSize}px; color: orange;`;
+            if (i == 5) letras[i].style.cssText = `font-size: ${fontSize}px; color: pink;`;
+            if (i == 6) letras[i].style.cssText = `font-size: ${fontSize}px; color: blue;`;
+            if (i == 7) letras[i].style.cssText = `font-size: ${fontSize}px; color: yellow;`;
+            if (i == 8) letras[i].style.cssText = `font-size: ${fontSize}px; color: green;`;
+            if (i == 9) letras[i].style.cssText = `font-size: ${fontSize}px; color: orange;`;
+            if (i == 10) letras[i].style.cssText = `font-size: ${fontSize}px; color: pink;`;
+            if (i == 11) letras[i].style.cssText = `font-size: ${fontSize}px; color: blue;`;
+            if (i == 12) letras[i].style.cssText = `font-size: ${fontSize}px; color: yellow;`;
+            if (i == 13) letras[i].style.cssText = `font-size: ${fontSize}px; color: green;`;
+            if (i == 14) letras[i].style.cssText = `font-size: ${fontSize}px; color: orange;`;
+            if (i == 15) letras[i].style.cssText = `font-size: ${fontSize}px; color: pink;`;
         }, time);
 
        time += 200;
     }
 }
 
-function reiniciarColor(letras, margen, pixels, fontSize, marginTop, incremento) {
+function cambiarColor(letras, fontSize) {
+    for (let i in letras) {
+        setTimeout(() => {
+            if (i == 0) letras[i].style.cssText = `font-size: ${fontSize}px; color: pink;`;
+            if (i == 1) letras[i].style.cssText = `font-size: ${fontSize}px; color: blue;`;
+            if (i == 2) letras[i].style.cssText = `font-size: ${fontSize}px; color: yellow;`;
+            if (i == 3) letras[i].style.cssText = `font-size: ${fontSize}px; color: green;`;
+            if (i == 4) letras[i].style.cssText = `font-size: ${fontSize}px; color: orange;`;
+            if (i == 5) letras[i].style.cssText = `font-size: ${fontSize}px; color: pink;`;
+            if (i == 6) letras[i].style.cssText = `font-size: ${fontSize}px; color: blue;`;
+            if (i == 7) letras[i].style.cssText = `font-size: ${fontSize}px; color: yellow;`;
+            if (i == 8) letras[i].style.cssText = `font-size: ${fontSize}px; color: green;`;
+            if (i == 9) letras[i].style.cssText = `font-size: ${fontSize}px; color: orange;`;
+            if (i == 10) letras[i].style.cssText = `font-size: ${fontSize}px; color: pink;`;
+            if (i == 11) letras[i].style.cssText = `font-size: ${fontSize}px; color: blue;`;
+            if (i == 12) letras[i].style.cssText = `font-size: ${fontSize}px; color: yellow;`;
+            if (i == 13) letras[i].style.cssText = `font-size: ${fontSize}px; color: green;`;
+            if (i == 14) letras[i].style.cssText = `font-size: ${fontSize}px; color: orange;`;
+            if (i == 15) letras[i].style.cssText = `font-size: ${fontSize}px; color: pink;`;
+        }, 4500);
+
+    }
+}
+
+function reiniciarColor(letras, fontSize, timePlus) {
     setTimeout(() => {
-        pixels = 0;
         for (let i in letras) {
-            letras[i].style.cssText = `margin-left: ${margen + pixels}px; margin-top: -${marginTop}px; font-size: ${fontSize}px; color: black;`;
-            pixels += incremento;
+            letras[i].style.cssText = `font-size: ${fontSize}px; color: black;`;
         }
-    }, 4000);
+    }, 4000 + timePlus);
 }
 
 sorpresa();
